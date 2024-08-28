@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main() {
+   int answer, usernum;
+   int i=0;
+   answer = 47;
+   printf("Welcome to the number guessing game\n");
+   printf("I have chosen a number from (1-100)\n");
+   printf("Can you guess it?\n");
+   int attempts = 3;
+   while(i<3) {
+      printf("Enter your guess: ");
+      scanf("%d", &usernum);  // Corrected format specifier
+      
+      if(answer == usernum) {
+         printf("Congrats, you got it!\n");
+         break;
+      }
+      else if(answer > usernum) {
+         printf("Too low: TRY AGAIN\n");
+      }
+      else if(answer < usernum) {
+         printf("Too high: TRY AGAIN\n");
+      }
+      i+=1;
+   }
+   
+   return 0;  // Moved outside of the loop
+}
